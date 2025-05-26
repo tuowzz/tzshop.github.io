@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>กำลังพาไปยัง TikTok...</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ไปตะกร้า TikTok ของคุณ</title>
 
   <!-- Facebook Pixel -->
   <script>
@@ -14,39 +13,87 @@
     if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
     n.queue=[];t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}
-    (window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
 
-    fbq('init', 'YOUR_PIXEL_ID'); // << ใส่ Pixel ID ของคุณตรงนี้
-    fbq('track', 'ViewContent');
+    fbq('init', '127978927946856');
+    fbq('track', 'PageView');
   </script>
   <noscript>
     <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+    src="https://www.facebook.com/tr?id=127978927946856&ev=PageView&noscript=1"/>
   </noscript>
 
+  <!-- TikTok Pixel -->
   <script>
-    setTimeout(() => {
-      window.location.href = "https://vt.tiktok.com/ZShcWN8p6"; // << ลิงก์ TikTok ของคุณ
-    }, 1500);
+    !function (w, d, t) {
+        w.TiktokAnalyticsObject = t;
+        var ttq = w[t] = w[t] || [];
+        ttq.methods = ["page","track"];
+        ttq.setAndDefer = function (t, e) {
+            t[e] = function () {
+                t.push([e].concat(Array.prototype.slice.call(arguments, 0)))
+            }
+        };
+        for (var i = 0; i < ttq.methods.length; i++) {
+            ttq.setAndDefer(ttq, ttq.methods[i]);
+        }
+        ttq.load = function (e, n) {
+            var i = "https://analytics.tiktok.com/i18n/pixel/events.js";
+            ttq._i = ttq._i || {};
+            ttq._i[e] = [];
+            ttq._t = ttq._t || {};
+            ttq._t[e] = +new Date;
+            ttq._o = ttq._o || {};
+            ttq._o[e] = n || {};
+            var o = document.createElement("script");
+            o.type = "text/javascript";
+            o.async = true;
+            o.src = i + "?sdkid=" + e + "&lib=" + t;
+            var a = document.getElementsByTagName("script")[0];
+            a.parentNode.insertBefore(o, a);
+        };
+        ttq.load('D0EVS2JC77U9C23772EG');
+        ttq.page();
+    }(window, document, 'ttq');
   </script>
 
   <style>
     body {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
       font-family: sans-serif;
       background-color: #fff9f0;
+      margin: 0;
+      text-align: center;
     }
     h1 {
       font-size: 22px;
       color: #333;
     }
+    a.button {
+      margin-top: 20px;
+      padding: 14px 28px;
+      font-size: 18px;
+      color: white;
+      background-color: #fe2c55;
+      text-decoration: none;
+      border-radius: 8px;
+      display: inline-block;
+    }
   </style>
 </head>
 <body>
-  <h1>กำลังพาคุณไปยัง TikTok...</h1>
+  <h1>คลิกเพื่อไปยังตะกร้า TikTok ของคุณ</h1>
+  <a class="button" href="https://vt.tiktok.com/ZShcWN8p6" target="_blank"
+     onclick="
+       fbq('track', 'Purchase', {value: 0.00, currency: 'THB'});
+       ttq.track('CompletePayment');
+     ">
+     ไปยังตะกร้า TikTok
+  </a>
 </body>
 </html>
